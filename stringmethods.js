@@ -1,0 +1,18 @@
+let fruitname = "apple";
+let sellername = "teddy bear";
+let buyername = "plump ";
+console.log(fruitname.at(0));
+console.log(sellername.length);
+console.log(buyername.toUpperCase());
+console.log(buyername.toLowerCase());
+console.log(fruitname.trim());
+console.log(sellername.includes("deer"));
+console.log(fruitname.indexOf("a"));
+console.log(buyername.lastIndexOf("p"));
+console.log(sellername.slice(0, 5));
+console.log(fruitname.substring(0, 3));
+console.log(fruitname.replace("apple", "orange"));
+console.log(sellername.split());
+console.log(buyername.charAt(3));
+console.log(buyername.startsWith("t"));
+console.log(sellername.endsWith("r"));
