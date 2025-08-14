@@ -1,4 +1,20 @@
-let Current = new Date();
-console.log(Current.toDateString());
-// console.log(Current.totimeString());
-console.log(Current.toLocaleTimeString());
+for (let i = 1; i <= 15; i++) {
+  console.log("number", i);
+}
+
+//output:
+// number 1
+// number 2
+// number 3
+// number 4
+// number 5
+// number 6
+// number 7
+// number 8
+// number 9
+// number 10
+// number 11
+// number 12
+// number 13
+// number 14
+// number 15
