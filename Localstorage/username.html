@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage</title>
+  </head>
+  <body>
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" /><br /><br />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" /><br /><br />
+      <button type="button" onclick="savedata()">Save</button><br /><br />
+      <button type="button" onclick="getData()">Get</button><br /><br />
+      <button type="button" onclick="removeData()">Clear</button><br /><br />
+      <p id="output"></p>
+    </form>
+    <script>
+      function savedata() {
+        let uname = document.getElementById("username").value;
+        let pass = document.getElementById("password").value;
+        let user = { username: uname, password: pass };
+        localStorage.setItem("userData", JSON.stringify(user));
+        alert("data stored in local storage!!!");
+      }
+      function getData() {
+        let data = localStorage.getItem("userData");
+        if (data) {
+          let user = JSON.parse(data);
+          document.getElementById("output").innerText =
+            "username:" + user.username + "password:" + user.password;
+        } else {
+          document.getElementById("output").innerText = "No Data Found";
+        }
+      }
+      function removeData() {
+        let removeData = localStorage.removeItem("userData");
+        document.getElementById("output").innerText = "Data cleared!";
+      }
+    </script>
+  </body>
+</html>
