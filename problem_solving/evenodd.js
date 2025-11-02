@@ -9,5 +9,5 @@ num.forEach((n) => {
     oddcount.push(n);
   }
 });
-console.log("oddcount::", oddcount);
-console.log("eventcount", evencount);
+console.log("oddcount:", oddcount);
+console.log("eventcount:", evencount);
