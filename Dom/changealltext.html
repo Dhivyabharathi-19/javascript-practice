@@ -1,0 +1,39 @@
+<!-- Create three paragraphs (p1, p2, p3).
+When a button is clicked, change all three texts to:
+“Updated using innerHTML”. -->
+<!-- Create a button and a paragraph.  -->
+<!-- When you click the button, change the
+paragraph text to "Hello JavaScript!". -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change All Text</title>
+  </head>
+  <body>
+    <p id="p1">This is HTML!</p>
+    <p id="p2">This is CSS!</p>
+    <p id="p3">This is JavaScript!</p>
+
+    <button
+      onclick="changeAllText()"
+      style="
+        background-color: rgb(153, 149, 218);
+        border: none;
+        width: 100px;
+        height: 50px;
+      "
+    >
+      Click Me
+    </button>
+
+    <script>
+      function changeAllText() {
+        document.getElementById("p1").innerHTML = "Hello I'm FrontEnd!";
+        document.getElementById("p2").innerHTML = "Hello I'm FrontEnd!";
+        document.getElementById("p3").innerHTML = "Hello I'm FrontEnd!";
+      }
+    </script>
+  </body>
+</html>
