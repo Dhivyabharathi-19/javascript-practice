@@ -1,0 +1,30 @@
+<!-- 
+ 2. Add a List Item
+
+Create an empty <ul> and a button.
+When clicked, JS should add a new <li> item with text like “Item 1”, “Item 2”, etc. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a List Item</title>
+  </head>
+  <body>
+    <button id="addItemBtn">Add List Item</button>
+    <ul id="myList"></ul>
+
+    <script>
+      const button = document.getElementById("addItemBtn");
+      const list = document.getElementById("myList");
+      let count = 1;
+
+      button.addEventListener("click", function () {
+        const li = document.createElement("li");
+        li.textContent = "Item " + count;
+        list.appendChild(li);
+        count++;
+      });
+    </script>
+  </body>
+</html>
