@@ -1,0 +1,36 @@
+<!-- 3. Add Multiple Elements
+
+When the button is clicked, add three new <div> elements each with text “Box 1”, “Box 2”, “Box 3”. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Multiple Elements</title>
+  </head>
+  <body>
+    <button id="addBoxesBtn">Add Boxes</button>
+    <div id="container"></div>
+
+    <script>
+      const button = document.getElementById("addBoxesBtn");
+      const container = document.getElementById("container");
+
+      button.onclick = function () {
+        const box1 = document.createElement("div");
+        box1.textContent = "Box 1";
+
+        const box2 = document.createElement("div");
+        box2.textContent = "Box 2";
+
+        const box3 = document.createElement("div");
+        box3.textContent = "Box 3";
+
+        container.appendChild(box1);
+        container.appendChild(box2);
+        container.appendChild(box3);
+      };
+    </script>
+  </body>
+</html>
