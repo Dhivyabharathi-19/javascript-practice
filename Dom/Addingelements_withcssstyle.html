@@ -1,0 +1,27 @@
+<!-- 6. Add Element with CSS Style
+
+Create a button that adds a new <div> element with a background color, height, and width each time it’s clicked. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Add Element with CSS Style</title>
+  </head>
+  <body>
+    <button onclick="addBox()">Add Box</button>
+    <div id="boxContainer"></div>
+
+    <script>
+      function addBox() {
+        const box = document.createElement("div");
+        const cssstyle = document.getElementById("boxContainer");
+        box.style.width = "100px";
+        box.style.height = "100px";
+        box.style.backgroundColor = "skyblue";
+        box.style.marginTop = "10px";
+        box.style.borderRadius = "8px";
+        cssstyle.appendChild(box);
+      }
+    </script>
+  </body>
+</html>
