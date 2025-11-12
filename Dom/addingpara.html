@@ -1,0 +1,26 @@
+<!-- Add a New Paragraph
+
+Create a button that, when clicked, adds a new <p> element with text “This is a new paragraph” below it. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a New Paragraph</title>
+  </head>
+  <body>
+    <button id="addBtn">Add Paragraph</button>
+    <p id="output"></p>
+
+    <script>
+      const button = document.getElementById("addBtn");
+      const output = document.getElementById("output");
+      button.addEventListener("click", function () {
+        const newPara = document.createElement("p");
+        newPara.textContent = "This is a new paragraph";
+        output.appendChild(newPara);
+      });
+    </script>
+  </body>
+</html>
