@@ -1,0 +1,21 @@
+<!-- Create a <div> with some text.
+When you click a button, add extra text at the end using += with innerHTML.
+
+Example: “Hello” → “Hello Everyone!” -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Text</title>
+  </head>
+  <body>
+    <div id="myDiv">Hello</div>
+    <button onclick="addText()">Add Text</button>
+
+    <script>
+      function addText() {
+        document.getElementById("myDiv").innerHTML += " Everyone!";
+      }
+    </script>
+  </body>
+</html>
