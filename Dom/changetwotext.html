@@ -1,0 +1,51 @@
+<!-- Create a paragraph with some text and two buttons:
+One button should change the paragraph to “This is the first message.”
+Another button should change it to “This is the second message.” -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Paragraph Text</title>
+  </head>
+  <body>
+    <p id="myPara">This is the original text.</p>
+
+    <button
+      onclick="firstMessage()"
+      style="
+        background-color: lightblue;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      "
+    >
+      First Message
+    </button>
+
+    <button
+      onclick="secondMessage()"
+      style="
+        background-color: lightgreen;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      "
+    >
+      Second Message
+    </button>
+
+    <script>
+      function firstMessage() {
+        document.getElementById("myPara").innerHTML =
+          "This is the first message.";
+      }
+
+      function secondMessage() {
+        document.getElementById("myPara").innerHTML =
+          "This is the second message.";
+      }
+    </script>
+  </body>
+</html>
