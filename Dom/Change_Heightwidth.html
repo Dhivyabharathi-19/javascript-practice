@@ -1,0 +1,36 @@
+<!-- 5. Change Width and Height
+
+Create a <div> with a fixed size.
+Write JS to increase its width to 300px and height to 150px when a button is clicked. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Height</title>
+  </head>
+  <body>
+    <div
+      id="div"
+      style="
+        width: 150px;
+        height: 200px;
+        border: dashed;
+        background-color: blueviolet;
+      "
+    ></div>
+    <br /><br />
+    <button id="btn">Clicked</button>
+    <script>
+      const div1 = document.getElementById("div");
+      const button = document.getElementById("btn");
+
+      button.addEventListener("click", function () {
+        console.log("cllicked");
+        div1.style.height = "400px";
+        div1.style.width = "200px";
+      });
+    </script>
+  </body>
+</html>
