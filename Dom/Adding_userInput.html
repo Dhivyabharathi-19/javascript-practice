@@ -1,0 +1,36 @@
+<!-- 7. Add Element with User Input
+
+Have a text box and a button.
+When the button is clicked, add whatever the user typed as a new <p> element in a list. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Element</title>
+  </head>
+  <body>
+    <input type="text" id="userInput" placeholder="Type something..." />
+    <button onclick="addElement()">Add</button>
+
+    <div id="listContainer"></div>
+
+    <script>
+      function addElement() {
+        let text = document.getElementById("userInput").value;
+
+        if (text.trim() === "") {
+          alert("Please enter something!");
+          return;
+        }
+
+        let para = document.createElement("p"); // create new <p>
+        para.textContent = text; // set text inside <p>
+
+        document.getElementById("listContainer").appendChild(para); // add to list
+
+        document.getElementById("userInput").value = ""; // clear input
+      }
+    </script>
+  </body>
+</html>
