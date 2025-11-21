@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="p1">hii this is paragrah one</p>
+    <p id="p2"></p>
+    <button onclick="changetext()">click me</button>
+  </body>
+  <script>
+    function changetext() {
+      let textfromp1 = document.getElementById("p1").innerHTML;
+
+      // Step 2: Put that text inside paragraph 2
+      document.getElementById("p2").innerHTML = textfromp1;
+
+      // Step 3: Change background color of paragraph 2
+      document.getElementById("p2").style.backgroundColor = "red";
+    }
+  </script>
+</html>
