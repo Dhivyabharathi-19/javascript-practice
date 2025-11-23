@@ -1,0 +1,33 @@
+<!-- Create three paragraphs (p1, p2, p3).
+When a button is clicked, change all three texts to:
+“Updated using innerHTML”. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Heading</title>
+  </head>
+  <body>
+    <h3 id="Heading">Old Heading</h3>
+
+    <button
+      onclick="changeHeading()"
+      style="
+        background-color: lightgreen;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+      "
+    >
+      Click Me
+    </button>
+
+    <script>
+      function changeHeading() {
+        document.getElementById("Heading").innerHTML = "New Heading ";
+      }
+    </script>
+  </body>
+</html>
