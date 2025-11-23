@@ -1,0 +1,51 @@
+<!-- Write a JavaScript program using DOM Event Listeners to create a simple music app interface.
+The app should display a list of songs. When a user clicks on a song name:
+
+1. The clicked song should change its color to green.
+
+
+2. The previous song’s color should return to normal.
+
+
+3. A message below the list should display the currently playing song. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Event</title>
+  </head>
+  <body>
+    <h2>Music App</h2>
+
+    <ul>
+      <li id="Song1">song 1</li>
+      <li id="Song2">song 2</li>
+      <li id="Song3">song 3</li>
+    </ul>
+
+    <div id="message">No song playing</div>
+
+    <script>
+      const songs = document.querySelectorAll("li");
+      const message = document.getElementById("message");
+
+      let previousSong = null;
+
+      songs.forEach((song) => {
+        song.addEventListener("click", function () {
+          if (previousSong) {
+            previousSong.style.color = "black";
+          }
+
+          this.style.color = "green";
+
+          message.textContent = `Now Playing: ${this.textContent}`;
+
+          previousSong = this;
+        });
+      });
+    </script>
+  </body>
+</html>
