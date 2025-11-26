@@ -1,0 +1,31 @@
+<!-- 4. Toggle Bold Text
+
+Create a paragraph.
+Write JS to toggle the font weight between normal and bold each time a button is clicked. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle Bold Text</title>
+  </head>
+  <body>
+    <p id="text">Hello Javascript!</p>
+    <button id="toggle">Toggle</button>
+    <script>
+      const smalltext = document.getElementById("text");
+      const togglebtn = document.getElementById("toggle");
+
+      togglebtn.addEventListener("click", function () {
+        console.log("cllicked");
+
+        if (smalltext.style.fontWeight === "bold") {
+          smalltext.style.fontWeight = "normal";
+        } else {
+          smalltext.style.fontWeight = "bold";
+        }
+      });
+    </script>
+  </body>
+</html>
