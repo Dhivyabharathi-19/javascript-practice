@@ -1,0 +1,25 @@
+<!-- Create two paragraphs.
+When you click a button, swap their texts using innerHTML. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Swap Paragraph Texts</title>
+  </head>
+  <body>
+    <p id="para1">First Paragraph</p>
+    <p id="para2">Second Paragraph</p>
+    <button onclick="swapText()">Swap Text</button>
+
+    <script>
+      function swapText() {
+        let p1 = document.getElementById("para1");
+        let p2 = document.getElementById("para2");
+
+        let temp = p1.innerHTML;
+        p1.innerHTML = p2.innerHTML;
+        p2.innerHTML = temp;
+      }
+    </script>
+  </body>
+</html>
