@@ -1,0 +1,30 @@
+<!-- Create a paragraph that says “0”.
+Each time you click a button, update the paragraph using innerHTML to show
+the next number (1, 2, 3, ...). -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Pharagraph</title>
+  </head>
+  <body>
+    <p id="para">0</p>
+    <button id="updateBtn">Update</button>
+
+    <script>
+      const paragraph1 = document.getElementById("para");
+
+      const updateButton = document.getElementById("updateBtn");
+
+      let count = 0;
+      updateButton.addEventListener("click", function () {
+        console.log("clicked");
+
+        count++;
+        paragraph1.innerHTML = count;
+      });
+    </script>
+  </body>
+</html>
