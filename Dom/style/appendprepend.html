@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body>
+    <button id="add">click me</button>
+    <div id="output"></div>
+    <script>
+      const button = document.getElementById("add");
+      const output = document.getElementById("output");
+
+      button.addEventListener("click", function () {
+        let hat = document.createElement("h1");
+        let cat = document.createElement("h1");
+        let cut = document.createElement("h1");
+
+        hat.textContent = "happy holidays";
+        cat.textContent = "Rainy holidays";
+        cut.textContent = "happy holidays";
+        output.appendChild(hat);
+        output.appendChild(cat);
+        output.appendChild(cut);
+      });
+    </script>
+  </body>
+</html>
