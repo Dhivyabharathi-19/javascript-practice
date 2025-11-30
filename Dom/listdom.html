@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h2>Fruit List</h2>
+
+    <ul id="fruitList">
+      <li>apple</li>
+      <li>banana</li>
+      <li>orange</li>
+    </ul>
+
+    <button id="addBtn">Add Grapes</button>
+  </body>
+
+  <script>
+    const items = document.querySelectorAll("li");
+
+    items.forEach((item) => console.log(item.innerText));
+
+    items.forEach((item) => (item.style.color = "blue"));
+
+    items.forEach((item) => {
+      item.innerText = item.innerText.toUpperCase();
+    });
+
+    items.forEach((item) => {
+      item.addEventListener("click", () => {
+        alert("You clicked: " + item.innerText);
+      });
+    });
+
+    document.getElementById("addBtn").addEventListener("click", () => {
+      const ul = document.getElementById("fruitList");
+      const newItem = document.createElement("li");
+      newItem.textContent = "GRAPES";
+      newItem.style.color = "blue";
+
+      newItem.addEventListener("click", () => {
+        alert("You clicked: GRAPES");
+      });
+
+      ul.appendChild(newItem);
+    });
+  </script>
+</html>
