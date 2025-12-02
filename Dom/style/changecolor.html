@@ -1,0 +1,23 @@
+<!-- Create a paragraph with some text.
+Write JS to change the text color to blue when a button is clicked. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Change Text Color</title>
+  </head>
+  <body>
+    <p id="myPara">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+      repellendus laboriosam consequuntur. Veritatis possimus corporis esse
+      commodi tempore magni placeat molestias provident minima quaerat ipsa
+      ducimus, expedita ratione, iure maiores!
+    </p>
+    <button onclick="changeTextColor()">Change Text Color</button>
+
+    <script>
+      function changeTextColor() {
+        document.getElementById("myPara").style.color = "blue";
+      }
+    </script>
+  </body>
+</html>
