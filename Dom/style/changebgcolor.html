@@ -1,0 +1,24 @@
+<!-- 1. Change Background Color
+
+Create a <div> with some text.
+Write JavaScript that changes the background color of the div to yellow when a button is clicked. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Change Background Color</title>
+  </head>
+  <body>
+    <div id="myDiv" style="padding: 20px; border: 1px solid black">
+      Hello I'm FrontEnd Developer
+    </div>
+    <br />
+    <button onclick="changeColor()">Change Background</button>
+
+    <script>
+      function changeColor() {
+        document.getElementById("myDiv").style.backgroundColor = "yellow";
+      }
+    </script>
+  </body>
+</html>
