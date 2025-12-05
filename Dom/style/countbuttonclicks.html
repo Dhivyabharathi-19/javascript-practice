@@ -1,0 +1,31 @@
+<!-- Count Button Clicks (DOM)
+
+Question:
+Create a button that shows how many times it was clicked.
+
+Example:
+If clicked 3 times → display "Button clicked 3 times".
+
+Hint: create a variable and update DOM text. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Count Clicks</title>
+  </head>
+  <body>
+    <button onclick="countClicks()">Click Me</button>
+    <p id="output">Button clicked 0 times</p>
+
+    <script>
+      let count = 0;
+
+      function countClicks() {
+        count++;
+        document.getElementById(
+          "output"
+        ).textContent = `Button clicked ${count} times`;
+      }
+    </script>
+  </body>
+</html>
