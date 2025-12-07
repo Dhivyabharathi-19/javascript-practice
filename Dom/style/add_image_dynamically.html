@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Add Image Dynamically</title>
+  </head>
+  <body>
+    <button onclick="addImage()">Add Image</button>
+    <div id="imageContainer"></div>
+
+    <script>
+      function addImage() {
+        const img = document.createElement("img");
+        img.src =
+          "C:\Users\User\Desktop\Front development course\javascript\Dom\style\image\nature.jpg";
+        img.alt = "Dynamic Image";
+        img.style.marginTop = "10px";
+        document.getElementById("imageContainer").appendChild(img);
+      }
+    </script>
+  </body>
+</html>

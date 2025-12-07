@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body>
+    <button id="app">add-append</button>
+
+    <button id="prep">add-prepend</button>
+    <div id="output">
+      <p>1st elemnt</p>
+      <p>2nd elemnt</p>
+    </div>
+    <script>
+      const output = document.getElementById("output");
+      const app = document.getElementById("app");
+      const prep = document.getElementById("prep");
+
+      let count = 1;
+
+      app.addEventListener("click", function () {
+        const newdiv = document.createElement("img");
+        img.src = "style/image/nature.jpg";
+        img.alt = "image";
+
+        output.append(img);
+      });
+      prep.addEventListener("click", function () {
+        const newdiv2 = document.createElement("p");
+        newdiv2.textContent = "Welocome TO React js";
+        output.prepend(newdiv2);
+      });
+    </script>
+  </body>
+</html>

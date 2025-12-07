@@ -1,0 +1,23 @@
+<!-- 2. Change Font Size
+
+Create a paragraph with some text.
+Write JS to increase the font size of the paragraph to 24px when a button is clicked. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Change Font Size</title>
+  </head>
+  <body>
+    <p id="myPara">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, quam?
+    </p>
+    <button onclick="changeFontSize()">Increase Font Size</button>
+
+    <script>
+      function changeFontSize() {
+        document.getElementById("myPara").style.fontSize = "24px";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!-- Form Validation
+
+Question:
+Create a form with name and email inputs.
+If the user clicks “Submit” without filling both fields, show a red error message.
+
+Hint:
+Use .value and innerHTML. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <h2>Form</h2>
+
+    <input type="text" id="name" placeholder="Enter Name" /><br /><br />
+    <input type="email" id="email" placeholder="Enter Email" /><br /><br />
+
+    <button onclick="validateForm()">Submit</button>
+
+    <p id="error" style="color: red"></p>
+
+    <script>
+      function validateForm() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let errorMsg = document.getElementById("error");
+
+        if (name === "" || email === "") {
+          errorMsg.innerHTML = "Please fill out both Name and Email!";
+        } else {
+          errorMsg.innerHTML = "";
+          alert("Form Submitted Successfully!");
+        }
+      }
+    </script>
+  </body>
+</html>

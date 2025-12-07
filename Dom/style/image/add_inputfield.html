@@ -1,0 +1,27 @@
+<!-- 
+ 5. Add Input Field
+
+When a button is clicked, create a new <input> field below it (each click adds one more). -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Add Input Field</title>
+  </head>
+  <body>
+    <button onclick="addInput()">Add Input Field</button>
+    <div id="inputContainer"></div>
+
+    <script>
+      function addInput() {
+        const input = document.createElement("input");
+        const container = document.getElementById("inputContainer");
+        input.type = "text";
+        input.placeholder = "Enter text";
+        input.style.display = "block";
+        input.style.marginTop = "10px";
+        container.appendChild(input);
+      }
+    </script>
+  </body>
+</html>

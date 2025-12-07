@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Registration Form</title>
+  </head>
+  <body>
+    <h2>Event Registration</h2>
+
+    <form id="eventForm">
+      <label>Name:</label>
+      <input type="text" id="name" /><br /><br />
+
+      <label>Email:</label>
+      <input type="email" id="email" /><br /><br />
+
+      <label>Age:</label>
+      <input type="number" id="age" /><br /><br />
+      <label>Gender:</label><br />
+      <input type="radio" name="gender" value="Male" /> Male<br />
+      <input type="radio" name="gender" value="Female" /> Female<br />
+      <input type="radio" name="gender" value="Other" /> Other<br /><br />
+
+      <label>Choose Event:</label><br />
+      <input type="checkbox" name="event" value="Dance" /> Dance<br />
+      <input type="checkbox" name="event" value="Music" /> Music<br />
+      <input type="checkbox" name="event" value="Drama" /> Drama<br /><br />
+
+      <button type="button" id="submitBtn">Register</button>
+    </form>
+
+    <p id="message" style="color: red"></p>
+    <div id="summary"></div>
+
+    <script>
+      const submitBtn = document.getElementById("submitBtn");
+      const message = document.getElementById("message");
+      const summary = document.getElementById("summary");
+
+      submitBtn.addEventListener("click", () => {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const age = document.getElementById("age").value;
+        const genderInput = document.querySelector(
+          "input[name='gender']:checked"
+        );
+
+        const events = document.querySelectorAll("input[name='event']:checked");
+        let SelectedEvents = [];
+        events.forEach((event) => {
+          SelectedEvents.push(event.value);
+        });
+
+        if (
+          !name ||
+          !email ||
+          !age ||
+          !genderInput ||
+          SelectedEvents.length === 0
+        ) {
+          message.textContent =
+            " Please fill  all fields and select at least one event.";
+          summary.innerHTML = "";
+          return;
+        }
+
+        const gender = genderInput.value;
+        message.textContent = "";
+        summary.innerHTML = `
+      <h3>Registration Summary</h3>
+      <p><b>Name:</b> ${name}</p>
+      <p><b>Email:</b> ${email}</p>
+      <p><b>Age:</b> ${age}</p>
+      <p><b>Gender:</b> ${gender}</p>
+      <p><b>Events Selected:</b> ${SelectedEvents.join(", ")}</p>
+    `;
+      });
+    </script>
+  </body>
+</html>
