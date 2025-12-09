@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Form Example</title>
+  </head>
+  <body style="font-family: Arial; text-align: center">
+    <h2>User Info Form</h2>
+
+    <form id="myForm">
+      <input
+        type="text"
+        name="name"
+        placeholder="Enter your name"
+        required
+      /><br /><br />
+      <input
+        type="number"
+        name="age"
+        placeholder="Enter your age"
+        required
+      /><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <p id="output"></p>
+
+    <script>
+      const form = document.getElementById("myForm");
+      const output = document.getElementById("output");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const name = formData.get("name");
+        const age = formData.get("age");
+        output.innerHTML = `Hello ${name}! You are ${age} years old.`;
+      });
+    </script>
+  </body>
+</html>
