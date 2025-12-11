@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Location Assign</title>
+    <style>
+      button {
+        width: 200;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="goToGoogle()" style="background-color: rgb(153, 242, 153)">
+      Go to Google
+    </button>
+
+    <button onclick="confirm()" style="background-color: rgb(196, 151, 151)">
+      Confirm
+    </button>
+    <button onclick="prompt()" style="background-color: rgb(120, 120, 248)">
+      Prompt
+    </button>
+
+    <script>
+      function goToGoogle() {
+        location.assign("https://www.google.com");
+      }
+    </script>
+  </body>
+</html>
