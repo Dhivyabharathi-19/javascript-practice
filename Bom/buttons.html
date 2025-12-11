@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buttons</title>
+    <style>
+      button {
+        width: 100px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      type="button"
+      style="background-color: red"
+      onclick="show()"
+      id="show"
+    >
+      Show Browser Info
+    </button>
+    <button
+      type="button"
+      style="background-color: Green"
+      onclick="openGoogle()"
+      id="openGoogle"
+    >
+      Open Google
+    </button>
+    <button
+      type="button"
+      style="background-color: blue"
+      id="wikipedia"
+      onclick="wikipedia()"
+    >
+      Go To Wikipedia
+    </button>
+    <button
+      type="button"
+      style="background-color: yellow"
+      id="GoBack"
+      onclick="GoBack()"
+    >
+      Go Back
+    </button>
+    <button
+      type="button"
+      style="background-color: yellow"
+      id="GoBack"
+      onclick="GoBack()"
+    >
+      Go Back
+    </button>
+    <script>
+      function show() {
+        alert("Browser Name" + navigator.appName);
+        alert("vesion Name" + navigator.appVersion);
+        alert("Screen width" + screen.width + "px");
+        location.assign("https://www.google.com");
+      }
+      function openGoogle() {
+        window.open("http://127.0.0.1:5500/practice/buttons.html");
+      }
+      function wikipedia() {
+        location.href = "https://en.wikipedia.org/wiki/Main_Page";
+      }
+      function GoBack() {
+        history.back();
+      }
+    </script>
+  </body>
+</html>
