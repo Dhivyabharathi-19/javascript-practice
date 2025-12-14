@@ -1,0 +1,51 @@
+<!-- Question:
+// Display current time every second in console.
+
+// Get user location using BOM
+
+// Question:
+// Write a code to get the user's current latitude and longitude using BOM. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BOM</title>
+  </head>
+  <body>
+    <h2>Current Time (updates every second)</h2>
+    <p id="time"></p>
+
+    <h2>Your Location</h2>
+    <p id="location">Click the button to get your location</p>
+
+    <button onclick="getLocation()">Get Location</button>
+
+    <script>
+      // 1. Display current time every second
+      setInterval(() => {
+        let now = new Date();
+        document.getElementById("time").textContent = now.toLocaleTimeString();
+      }, 1000);
+
+      // 2. Get user location using BOM
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              document.getElementById(
+                "location"
+              ).textContent = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+            },
+            (error) => {
+              document.getElementById("location").textContent =
+                "Error: " + error.message;
+            }
+          );
+        } else {
+          document.getElementById("location").textContent =
+            "Geolocation is not supported by your browser.";
+        }
+      }
+    </script>
+  </body>
+</html>
