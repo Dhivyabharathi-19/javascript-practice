@@ -1,0 +1,41 @@
+<!-- Get user location using BOM
+
+Question:
+Write a code to get the user's current latitude and longitude using BOM. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get User Location</title>
+  </head>
+  <body>
+    <button type="button" onclick="locate()">Get Location</button>
+
+    <p id="output"></p>
+
+    <script>
+      function locate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            function (position) {
+              const lat = position.coords.latitude;
+              const lon = position.coords.longitude;
+
+              document.getElementById("output").innerHTML =
+                "Latitude: " + lat + "<br>Longitude: " + lon;
+            },
+            function (error) {
+              document.getElementById("output").innerHTML =
+                "Unable to retrieve location";
+            }
+          );
+        } else {
+          document.getElementById("output").innerHTML =
+            "Geolocation is not supported by this browser";
+        }
+      }
+    </script>
+  </body>
+</html>
