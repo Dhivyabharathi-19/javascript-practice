@@ -1,0 +1,138 @@
+<!-- A washing machine has 3 buttons: Start Wash, Stop Wash, and Set Water Level.
+Each button should call a function that uses a Washing Machine API to show a message in the console.
+
+Using the given HTML code, explain what should happen when the user clicks:
+
+1. Start Wash
+
+
+2. Stop Wash
+
+
+3. Set Water Level
+
+
+
+Write what message will appear in the console for each button and which API method returns that message.
+
+
+---
+
+ Hint:
+
+Look at the object washingMachineAPI
+
+Each method (start, stop, waterLevel) returns a message
+
+Each button calls a function → that function calls the API method
+
+Output appears inside console.log()
+
+
+
+---
+Keywords 
+
+object, method, function, return, console.log, onclick, API -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Washing Machine UI</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .machine {
+        background: white;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      button {
+        display: block;
+        width: 200px;
+        padding: 10px;
+        margin: 10px auto;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .start {
+        background-color: #4caf50;
+        color: white;
+      }
+      .stop {
+        background-color: #f44336;
+        color: white;
+      }
+      .water {
+        background-color: #2196f3;
+        color: white;
+      }
+      .timer {
+        background-color: #ff9800;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="machine">
+      <h2>Washing Machine</h2>
+
+      <button class="start" onclick="startWash()">Start Wash</button>
+      <button class="stop" onclick="stopWash()">Stop Wash</button>
+      <button class="water" onclick="setWater()">Set Water Level</button>
+      <button class="timer" onclick="setTimer()">Set Timer</button>
+    </div>
+
+    <script>
+      const washingMachineAPI = {
+        start() {
+          return "Washing started";
+        },
+        stop() {
+          return "Washing stopped";
+        },
+        waterLevel() {
+          return "Water level set to medium";
+        },
+        timer() {
+          return "Timer set to 30 minutes";
+        },
+      };
+
+      // Functions called by buttons
+      function startWash() {
+        console.log(washingMachineAPI.start());
+      }
+
+      function stopWash() {
+        console.log(washingMachineAPI.stop());
+      }
+
+      function setWater() {
+        console.log(washingMachineAPI.waterLevel());
+      }
+
+      function setTimer() {
+        console.log(washingMachineAPI.timer());
+      }
+    </script>
+  </body>
+</html>
