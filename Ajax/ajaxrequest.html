@@ -1,0 +1,30 @@
+<!-- Write an AJAX request that runs when a button is clicked. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX on Button Click</title>
+  </head>
+
+  <body>
+    <p id="output"></p>
+
+    <button onclick="loadData()">Load Data</button>
+
+    <script>
+      function loadData() {
+        fetch("https://jsonplaceholder.typicode.com/posts/1")
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("output").textContent = data.title;
+          })
+          .catch((error) => {
+            document.getElementById("output").textContent =
+              "Error loading data";
+            console.log("Error:", error);
+          });
+      }
+    </script>
+  </body>
+</html>
