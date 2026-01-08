@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Count Users</title>
+  </head>
+  <body>
+    <h2>Count Users</h2>
+    <p id="output"></p>
+
+    <script>
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((users) => {
+          document.getElementById("output").innerText =
+            "Total users present: " + users.length;
+        })
+        .catch((error) => {
+          document.getElementById("output").innerText = "Error loading data";
+        });
+    </script>
+  </body>
+</html>
