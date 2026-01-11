@@ -1,0 +1,32 @@
+<!-- Using AJAX, fetch user.json and display the user's name in the console. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Load User JSON</title>
+  </head>
+
+  <body>
+    <h2>User Information</h2>
+
+    <p id="username"></p>
+
+    <button onclick="loadUser()">Load User</button>
+
+    <script>
+      function loadUser() {
+        fetch("https://jsonplaceholder.typicode.com/users/1")
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("username").textContent =
+              "Name: " + data.name;
+          })
+          .catch((error) => {
+            console.log("Error:", error);
+          });
+      }
+    </script>
+  </body>
+</html>
