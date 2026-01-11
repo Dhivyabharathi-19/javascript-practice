@@ -1,0 +1,31 @@
+<!-- Display Data in HTML 
+ Fetch users from the API and display their name
+and email inside an HTML list. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Display Users</title>
+  </head>
+  <body>
+    <h2>User List</h2>
+    <ul id="users"></ul>
+
+    <script>
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((data) => {
+          const userList = document.getElementById("users");
+
+          data.forEach((user) => {
+            const li = document.createElement("li");
+            li.textContent = user.name + " - " + user.email;
+            userList.appendChild(li);
+          });
+        })
+        .catch((error) => {
+          console.log("Error:", error);
+        });
+    </script>
+  </body>
+</html>
