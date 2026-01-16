@@ -1,0 +1,33 @@
+<!-- Write an AJAX GET request to load data from data.txt and display it inside a <p> tag. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GetRequest</title>
+  </head>
+
+  <body>
+    <p id="output"></p>
+    <button onclick="loadData()">Load Data</button>
+
+    <script>
+      function loadData() {
+        document.getElementById("output").innerHTML = "Loading...";
+
+        fetch("https://jsonplaceholder.typicode.com/users/1")
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            document.getElementById("output").innerHTML = data.name;
+          })
+          .catch(function (error) {
+            document.getElementById("output").innerHTML = "Error loading data";
+            console.log("Error:", error);
+          });
+      }
+    </script>
+  </body>
+</html>
