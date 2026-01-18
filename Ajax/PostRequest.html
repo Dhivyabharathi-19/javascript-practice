@@ -1,0 +1,33 @@
+<!-- 3. Write code to print "Loading..." before AJAX starts and show server response when finished. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Loading</title>
+  </head>
+
+  <body>
+    <p id="result"></p>
+    <button onclick="loadData()">Load Data</button>
+
+    <script>
+      function loadData() {
+        document.getElementById("result").innerHTML = "Loading...";
+
+        fetch("https://jsonplaceholder.typicode.com/users/1")
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            document.getElementById("result").innerHTML = data.name;
+          })
+          .catch(function (error) {
+            document.getElementById("result").innerHTML = "Error loading data";
+            console.log("Error:", error);
+          });
+      }
+    </script>
+  </body>
+</html>
