@@ -1,0 +1,58 @@
+<!-- One number displayed (start from 0)
+
+Buttons:
+
+Increment
+
+Decrement
+
+Reset
+
+Value should never go below 0
+
+Concepts tested:
+
+Variables
+
+Click events
+
+DOM manipulation -->
+
+<!-- Create a counter with Increment and Decrement buttons. -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+  </head>
+  <body>
+    <h2 id="count">0</h2>
+
+    <button onclick="increment()">Increment</button>
+    <button onclick="decrement()">Decrement</button>
+    <button onclick="reset()">Reset</button>
+
+    <script>
+      let count = 0;
+
+      function increment() {
+        count++;
+        document.getElementById("count").innerText = count;
+      }
+
+      function decrement() {
+        if (count > 0) {
+          count--;
+          document.getElementById("count").innerText = count;
+        }
+      }
+
+      function reset() {
+        count = 0;
+        document.getElementById("count").innerText = count;
+      }
+    </script>
+  </body>
+</html>
