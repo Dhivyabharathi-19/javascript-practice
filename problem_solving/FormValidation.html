@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <style>
+      .error {
+        color: red;
+        font-size: 14px;
+      }
+      input {
+        display: block;
+        margin-bottom: 5px;
+      }
+      button {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Register</h2>
+
+    <form id="myForm">
+      <label>Name</label>
+      <input type="text" id="name" placeholder="Enter your name" />
+      <div id="nameError" class="error"></div>
+
+      <label>Email</label>
+      <input type="text" id="email" placeholder="Enter your email" />
+      <div id="emailError" class="error"></div>
+
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Enter password" />
+      <div id="passwordError" class="error"></div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      const form = document.getElementById("myForm");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        let isValid = true;
+
+        if (name.length < 3) {
+          document.getElementById("nameError").textContent =
+            "Name must be at least 3 characters";
+          isValid = false;
+        } else {
+          document.getElementById("nameError").textContent = "";
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          document.getElementById("emailError").textContent =
+            "Enter a valid email";
+          isValid = false;
+        } else {
+          document.getElementById("emailError").textContent = "";
+        }
+
+        const passwordRegex = /^(?=.*\d).{8,}$/;
+        if (!passwordRegex.test(password)) {
+          document.getElementById("passwordError").textContent =
+            "Password must be 8+ characters and contain a number";
+          isValid = false;
+        } else {
+          document.getElementById("passwordError").textContent = "";
+        }
+
+        if (isValid) {
+          alert("Form submitted successfully!");
+          form.reset();
+        }
+      });
+    </script>
+  </body>
+</html>
