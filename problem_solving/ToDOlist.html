@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <style>
+      li {
+        margin: 6px 0;
+      }
+      .done {
+        text-decoration: line-through;
+        color: gray;
+      }
+      button {
+        margin-left: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Todo List</h2>
+
+    <input type="text" id="todoInput" placeholder="Enter task" />
+    <button onclick="addTodo()">Add</button>
+
+    <ul id="todoList"></ul>
+
+    <script>
+      let todos = [];
+
+      function addTodo() {
+        const input = document.getElementById("todoInput");
+        const text = input.value.trim();
+
+        if (text === "") return;
+
+        todos.push(text);
+        renderTodos();
+        input.value = "";
+      }
+
+      function renderTodos() {
+        const list = document.getElementById("todoList");
+        list.innerHTML = "";
+
+        todos.forEach((todo, index) => {
+          const li = document.createElement("li");
+          li.innerText = todo;
+
+          li.onclick = () => li.classList.toggle("done");
+
+          const delBtn = document.createElement("button");
+          delBtn.innerText = "Delete";
+          delBtn.onclick = (e) => {
+            e.stopPropagation();
+            todos.splice(index, 1);
+            renderTodos();
+          };
+
+          li.appendChild(delBtn);
+          list.appendChild(li);
+        });
+      }
+    </script>
+  </body>
+</html>
