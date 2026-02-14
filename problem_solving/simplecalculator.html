@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+  </head>
+  <body>
+    <input id="a" placeholder="Num 1" />
+    <input id="b" placeholder="Num 2" />
+    <br /><br />
+
+    <button onclick="calc('+')">+</button>
+    <button onclick="calc('-')">-</button>
+    <button onclick="calc('*')">*</button>
+    <button onclick="calc('/')">/</button>
+
+    <p>Result: <span id="res">0</span></p>
+    <p id="err" style="color: red"></p>
+
+    <script>
+      function calc(op) {
+        let x = Number(a.value);
+        let y = Number(b.value);
+
+        if (isNaN(x) || isNaN(y)) {
+          err.innerText = "Enter valid numbers";
+          return;
+        }
+
+        err.innerText = "";
+
+        if (op === "+") res.innerText = x + y;
+        else if (op === "-") res.innerText = x - y;
+        else if (op === "*") res.innerText = x * y;
+        else if (op === "/")
+          res.innerText = y === 0 ? "Cannot divide by 0" : x / y;
+      }
+    </script>
+  </body>
+</html>
