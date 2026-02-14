@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Character Counter</title>
+    <style>
+      .warning {
+        color: red;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Message</h2>
+
+    <textarea
+      id="textArea"
+      rows="4"
+      cols="40"
+      placeholder="Type here..."
+    ></textarea>
+    <p>Characters: <span id="count">0</span>/100</p>
+    <p id="warning" class="warning"></p>
+
+    <script>
+      const textArea = document.getElementById("textArea");
+      const count = document.getElementById("count");
+      const warning = document.getElementById("warning");
+      const max = 100;
+
+      textArea.addEventListener("input", () => {
+        const length = textArea.value.length;
+        count.innerText = length;
+
+        if (length > max) {
+          warning.innerText = "Character limit exceeded!";
+          textArea.value = textArea.value.slice(0, max);
+          count.innerText = max;
+        } else {
+          warning.innerText = "";
+        }
+      });
+    </script>
+  </body>
+</html>
